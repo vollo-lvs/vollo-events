@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<kotlin.version>1.3.10</kotlin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -80,7 +81,46 @@
 				</dependencies>
 			</plugin>
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>3.3.2</version>
+			</extension>
+		</extensions>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>vollo-releases</id>
+			<url>ftp://repo.vollo.nl/repo.vollo.nl/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>vollo-snapshots</id>
+			<url>ftp://repo.vollo.nl/repo.vollo.nl/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>vollo-repo-releases</id>
+			<url>http://repo.vollo.nl/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>vollo-repo-snapshots</id>
+			<url>http://repo.vollo.nl/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 </project>
 
