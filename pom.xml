@@ -90,16 +90,6 @@
 		</extensions>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>vollo-releases</id>
-			<url>ftp://repo.vollo.nl/repo.vollo.nl/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>vollo-snapshots</id>
-			<url>ftp://repo.vollo.nl/repo.vollo.nl/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
 	<repositories>
 		<repository>
 			<id>vollo-repo-releases</id>
@@ -122,5 +112,21 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <distributionManagement>
+                <repository>
+                    <id>vollo-releases</id>
+                    <url>ftp://repo.vollo.nl/repo.vollo.nl/releases</url>
+                </repository>
+                <snapshotRepository>
+                    <id>vollo-snapshots</id>
+                    <url>ftp://repo.vollo.nl/repo.vollo.nl/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
 
