@@ -80,6 +80,26 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<execution>
+						<phase>deploy</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>empty-repo.sh</executable>
+					<workingDirectory>${basedir}</workingDirectory>
+					<environmentVariables>
+						<PROJECT_VERSION>${project.version}</PROJECT_VERSION>
+					</environmentVariables>
+				</configuration>
+			</plugin>
 		</plugins>
 		<extensions>
 			<extension>
